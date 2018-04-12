@@ -65,6 +65,22 @@ class Api::V1::PhotosController < ApiController
     end
   end
 
+
+  def destroy
+    @photo = Photo.find_by(id: params[:id])
+    if !@photo
+      render json: {
+        message: "Can't find the photo!",
+        status: 400
+      }
+    else
+      @photo.destroy
+      render json: {
+        message: "Photo destroy successfully!"
+      }
+    end
+  end
+
   private
 
 
