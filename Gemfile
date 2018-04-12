@@ -37,6 +37,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'carrierwave'
 gem 'devise'
 
+# add 20180412 for  HTTP Request
+gem 'rest-client'
+
 group :production do
   gem 'pg'
 end
