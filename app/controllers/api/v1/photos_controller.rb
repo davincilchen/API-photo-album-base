@@ -3,14 +3,17 @@ class Api::V1::PhotosController < ApiController
   def index
     @photos = Photo.all
     #render json: @photos
-    render json: {
-      data: @photos.map do |photo|{
-        title: photo.title,
-        date: photo.date,
-        description: photo.description
+
+    if false #use jbuilder
+      render json: {
+        data: @photos.map do |photo|{
+          title: photo.title,
+          date: photo.date,
+          description: photo.description
+        }
+        end
       }
-      end
-    }
+    end
   end
 
   def show
@@ -21,12 +24,8 @@ class Api::V1::PhotosController < ApiController
         message: "Can't find the photo!",
         status: 400
       }
-    else
-      render json: {
-        title: @photo.title,
-        date: @photo.date,
-        description: @photo.description
-      }
+    else                          # 此行可以省略, default jbuilder template
+      render "api/v1/photos/show" # 此行可以省略, default jbuilder template
     end
   end
 
