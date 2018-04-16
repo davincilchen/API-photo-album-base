@@ -39,6 +39,8 @@ gem 'devise'
 
 # add 20180412 for  HTTP Request
 gem 'rest-client'
+# add 20180416 for facebook login
+gem 'omniauth-facebook' #bundle install
 
 group :production do
   gem 'pg'
