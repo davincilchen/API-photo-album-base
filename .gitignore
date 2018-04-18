@@ -23,3 +23,10 @@
 .byebug_history
 
 /public/uploads
+
+#fb application ID
+/config/facebook.yml
+
+#fake ssl 20180416 add by my self
+localhost.crt
+localhost.key
